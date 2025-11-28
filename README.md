@@ -39,22 +39,35 @@ This tool operates on the principle that the last bit of a pixel's color value c
 ## 📁 Project Structure
 ```
 PixelVault-Steganography/
-├── src/
+│
+├── assets/                  # 🎨 Branding & Static Resources
+│   └── logo2.png            # Application logo (Used in GUI header)
+│
+├── src/                     # 🧠 Core Backend Logic (The Brain)
+│   ├── __init__.py          # Makes 'src' importable
 │   ├── core/
-│   │   ├── encoder.py        # Logic to convert text to binary and embed in pixels.
-│   │   └── decoder.py        # Logic to extract binary from pixels and reconstruct text.
+│   │   ├── __init__.py
+│   │   ├── encoder.py       # Logic: File -> Base64 -> Binary -> LSB Embedding
+│   │   └── decoder.py       # Logic: LSB Extraction -> Binary -> Base64 -> File
 │   └── utils/
-│       └── file_handler.py   # Helpers for file I/O and format validation.
-├── gui/
-│   ├── app.py                # Main tkinter application window and loop.
-│   └── components/
-│       └── drag_drop.py      # Implementation of Drag-and-Drop widget events.
-├── assets/
-│   └── logo.png              # Application icon/logo.
-├── main.py                   # Entry point for the application.
-├── requirements.txt          # Dependency list.
-├── README.md                 # Project documentation.
-└── LICENSE                   # MIT License.
+│       ├── __init__.py
+│       └── file_handler.py  # Safety checks (Image Capacity vs File Size)
+│
+├── gui/                     # 🖥️ Desktop Application
+│   └── app.py               # Modern Dark-Mode GUI (CustomTkinter + DnD)
+│
+├── web/                     # 🌐 Web Application
+│   ├── static/              # Frontend Assets
+│   │   ├── css/
+│   │   │   └── style.css    # Glassmorphism & Cyberpunk styles
+│   │   └── js/
+│   │       └── script.js    # Drag-and-drop logic & AJAX calls
+│   ├── templates/
+│   │   └── index.html       # Main HTML5 Interface
+│   └── app.py               # Flask Server (Session isolation & Cleanup)
+├── main.py                  # 🚀 Entry point (Launches Desktop GUI by default)
+├── requirements.txt         # 📦 Dependency list
+└── README.md                # 📄 Documentation
 ```
 
 ---

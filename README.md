@@ -65,7 +65,7 @@ PixelVault-Steganography/
 │   ├── templates/
 │   │   └── index.html       # Main HTML5 Interface
 │   └── app.py               # Flask Server (Session isolation & Cleanup)
-├── main.py                  # 🚀 Entry point (Launches Desktop GUI by default)
+├── main.py                  # 🚀 Entry point (Mid-point which will ask to launch either Desktop GUI or Web Server)
 ├── requirements.txt         # 📦 Dependency list
 └── README.md                # 📄 Documentation
 ```
